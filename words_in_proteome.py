@@ -40,7 +40,6 @@ def read_sequences(filename):
 def search_word_in_proteome(seq_dico, word_list):
     """
     Search and counts words in proteome sequences.
-
     """
 
     found_word_dict = {}
