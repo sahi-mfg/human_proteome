@@ -56,8 +56,7 @@ def search_word_in_proteome(seq_dico, word_list):
 
 def find_most_frequent_word(freq_dict):
     """
-    Find and print the most frequent word found in sequences.
-
+    Find and print the most frequent word found in the sequences.
     """
     maxi = max(freq_dict.values())
     for word in freq_dict:
