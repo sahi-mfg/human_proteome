@@ -5,7 +5,7 @@ import argparse
 
 def read_words(filename):
     """
-    read the words contained in the file and return a list of the words converted to upercase and containing 3 characters or more
+    read the words contained in the file and return a list of the words converted to uppercase and containing 3 characters or more
     """
 
     with open(filename) as f:
@@ -22,7 +22,7 @@ def read_sequences(filename):
     """
     read the proteome in the file and return a dictionary containing the protein sequences
     """
-    with open(filename,'r') as fasta:
+    with open(filename, 'r') as fasta:
         seq_dico = {}
         for line in fasta:
             if line.startswith('>sp'):
@@ -36,6 +36,7 @@ def read_sequences(filename):
                 line = line.rstrip('\n')
                 seq_dico[proteine_id] += line
         return seq_dico
+
 
 def search_word_in_proteome(seq_dico, word_list):
     """
@@ -65,10 +66,6 @@ def find_most_frequent_word(freq_dict):
             # print("=> {} found {} times".format(word, maxi))
 
 
-
-
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('source_file', default=None)
@@ -79,11 +76,8 @@ def main():
     common_words = read_words(s_file)
     sequences = read_sequences(s_file2)
     found_word = search_word_in_proteome(sequences, common_words)
-    most_frequent_word = find_most_frequent_word(found_word)
-    #print(f'Il y a {len(common_words)} mots dans cette sélection.\n')
-    #print(f" la séquence de la protéine Q8N4C6 est {sequences['Q8N4C6']}")
+    find_most_frequent_word(found_word)
 
 
 if __name__ == '__main__':
     main()
-
