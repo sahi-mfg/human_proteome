@@ -4,44 +4,39 @@ import argparse
 
 
 def read_words(filename):
-    """
-    read the words contained in the file and return a list of the words converted to uppercase and containing 3 characters or more
-    """
+    """ read the words contained in the file and return a list of the words converted to uppercase and containing 3 characters or more. """
 
     with open(filename) as f:
         lines = f.readlines()
         new_lines = []
         for line in lines:
             if len(line) >= 3:
-                line = line.replace('\n', '')
+                line = line.replace("\n", "")
                 new_lines.append(line.upper())
         return new_lines
 
 
 def read_sequences(filename):
-    """
-    read the proteome in the file and return a dictionary containing the protein sequences
-    """
-    with open(filename, 'r') as fasta:
+    """ read the proteome in the file and return a dictionary containing the protein sequences. """
+
+    with open(filename, "r") as fasta:
         seq_dico = {}
         for line in fasta:
-            if line.startswith('>sp'):
-                line = line.lstrip('>sp')
-                line = line.lstrip(' ')
-                tab = line.split('|')
+            if line.startswith(">sp"):
+                line = line.lstrip(">sp")
+                line = line.lstrip(" ")
+                tab = line.split("|")
                 proteine_id = tab[1]
-                line = line.rstrip(' ')
-                seq_dico[proteine_id] = ''
+                line = line.rstrip(" ")
+                seq_dico[proteine_id] = ""
             else:
-                line = line.rstrip('\n')
+                line = line.rstrip("\n")
                 seq_dico[proteine_id] += line
         return seq_dico
 
 
 def search_word_in_proteome(seq_dico, word_list):
-    """
-    Search and counts words in proteome sequences.
-    """
+    """ Search and counts words in proteome sequences."""
 
     found_word_dict = {}
     for word in word_list:
@@ -56,9 +51,8 @@ def search_word_in_proteome(seq_dico, word_list):
 
 
 def find_most_frequent_word(freq_dict):
-    """
-    Find and print the most frequent word found in the sequences.
-    """
+    """ Find and print the most frequent word found in the sequences."""
+
     maxi = max(freq_dict.values())
     for word in freq_dict:
         if freq_dict[word] == maxi:
@@ -68,8 +62,8 @@ def find_most_frequent_word(freq_dict):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('source_file', default=None)
-    parser.add_argument('source_file2', default=None)
+    parser.add_argument("source_file", default=None)
+    parser.add_argument("source_file2", default=None)
     args = parser.parse_args()
     s_file = args.source_file
     s_file2 = args.source_file2
@@ -79,5 +73,5 @@ def main():
     find_most_frequent_word(found_word)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
