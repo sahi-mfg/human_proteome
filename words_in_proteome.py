@@ -5,7 +5,8 @@ import argparse
 
 def read_words(filename):
     """
-    read the words contained in the file and return a list of the words converted to uppercase and containing 3 characters or more
+    read the words contained in the file and return a list of the words converted to uppercase and containing 3
+    characters or more
     """
 
     with open(filename) as f:
