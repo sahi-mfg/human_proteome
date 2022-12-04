@@ -3,19 +3,19 @@
 import argparse
 
 
-def lit_fichier(filename):
+def read_file(filename):
     """" return a list containing the lines of the file """
     with open(filename, 'r') as f:
         return f.readlines()
 
 
-def extrait_organisme(lines_list):
-    organisme = ""
+def extract_organism(lines_list):
+    organism = ""
     for line in lines_list:
         if line[:10] == " ORGANISM":
-            # on récupère l'organisme du caractère 12 jusqu'à l'avant dernier
-            organisme = line[12:-1]
-    return organisme
+            # we recover the organism from character 12 to the last but one.
+            organism = line[12:-1]
+    return organism
 
 
 def main():
@@ -23,10 +23,10 @@ def main():
     parser.add_argument('source_file', default=None)
     args = parser.parse_args()
     s_file = args.source_file
-    liste_des_lignes = lit_fichier(s_file)
-    print("Nombre de lignes lues {}:{}".format(liste_des_lignes, len(liste_des_lignes)))
-    nom_organisme = extrait_organisme(liste_des_lignes)
-    print("oragnisme :", nom_organisme)
+    list_of_lines = read_file(s_file)
+    print("Number of lines read {}:{}".format(list_of_lines, len(list_of_lines)))
+    name_organism = extract_organism(liste_des_lignes)
+    print("organism :", name_organism)
 
 
 if __name__ == '__main__':
