@@ -24,19 +24,19 @@ def read_sequences(filename):
     read the proteome in the file and return a dictionary containing the protein sequences
     """
     with open(filename, 'r') as fasta:
-        seq_dico = {}
+        sequence_dict = {}
         for line in fasta:
             if line.startswith('>sp'):
                 line = line.lstrip('>sp')
                 line = line.lstrip(' ')
                 tab = line.split('|')
-                proteine_id = tab[1]
+                protein_id = tab[1]
                 line = line.rstrip(' ')
-                seq_dico[proteine_id] = ''
+                sequence_dict[protein_id] = ''
             else:
                 line = line.rstrip('\n')
-                seq_dico[proteine_id] += line
-        return seq_dico
+                sequence_dict[protein_id] += line
+        return sequence_dict
 
 
 def search_word_in_proteome(seq_dico, word_list):
@@ -47,8 +47,8 @@ def search_word_in_proteome(seq_dico, word_list):
     found_word_dict = {}
     for word in word_list:
         seq_count = 0
-        for prot_id in seq_dico:
-            if word in seq_dico[prot_id]:
+        for protein_id in seq_dico:
+            if word in seq_dico[protein_id]:
                 seq_count += 1
         if seq_count != 0:
             found_word_dict[word] = seq_count
