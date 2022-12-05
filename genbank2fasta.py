@@ -25,7 +25,7 @@ def main():
     s_file = args.source_file
     list_of_lines = read_file(s_file)
     print("Number of lines read {}:{}".format(list_of_lines, len(list_of_lines)))
-    name_organism = extract_organism(liste_des_lignes)
+    name_organism = extract_organism(list_of_lines)
     print("organism :", name_organism)
 
 
