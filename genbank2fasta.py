@@ -4,8 +4,8 @@ import argparse
 
 
 def read_file(filename):
-    """" return a list containing the lines of the file """
-    with open(filename, 'r') as f:
+    """ " return a list containing the lines of the file"""
+    with open(filename, "r") as f:
         return f.readlines()
 
 
@@ -20,7 +20,7 @@ def extract_organism(lines_list):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('source_file', default=None)
+    parser.add_argument("source_file", default=None)
     args = parser.parse_args()
     s_file = args.source_file
     list_of_lines = read_file(s_file)
@@ -29,5 +29,5 @@ def main():
     print("organism :", name_organism)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
