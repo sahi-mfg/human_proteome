@@ -1,12 +1,15 @@
-#!/usr/bin/python3
-
-import argparse
-
-
 def read_words(filename):
-    """
-    read the words contained in the file and return a list of the words converted to uppercase and containing 3
-    characters or more
+    """Read the words from a file and return a list of words.
+
+    Parameters
+    ----------
+    filename : str
+        The file name.
+
+    Returns
+    -------
+    list
+        list of words.
     """
 
     with open(filename) as f:
@@ -86,20 +89,3 @@ def find_most_frequent_word(freq_dict):
         if freq_dict[word] == maxi:
             print("=> {} found in {} sequences".format(word, maxi))
             # print("=> {} found {} times".format(word, maxi))
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("source_file", default=None)
-    parser.add_argument("source_file2", default=None)
-    args = parser.parse_args()
-    s_file = args.source_file
-    s_file2 = args.source_file2
-    common_words = read_words(s_file)
-    sequences = read_sequences(s_file2)
-    found_word = search_word_in_proteome(sequences, common_words)
-    find_most_frequent_word(found_word)
-
-
-if __name__ == "__main__":
-    main()

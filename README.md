@@ -8,6 +8,10 @@ we have at our disposal:
 at a rate of 1 word per line.
 
 - The human-proteome.fasta file which contains the human proteome in the form of
-sequences in FASTA format. 
+sequences in FASTA format.
 
+- The NC_001133.gbk file which contains the genome of the yeast Saccharomyces cerevisiae in     GenBank format.
 
+# How to use it
+
+```python main.py data/english-common-words.txt data/human-proteome.fasta.txt data/NC_001133.gbk```
