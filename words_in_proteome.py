@@ -20,8 +20,18 @@ def read_words(filename):
 
 
 def read_sequences(filename):
-    """
-    read the proteome in the file and return a dictionary containing the protein sequences
+    """Read protein sequences from a fasta file and return a dictionary
+    with protein id as key and sequence as value.
+
+    Parameters
+    ----------
+    filename : str
+        the file name.
+
+    Returns
+    -------
+    dict
+        a dictionary with protein id as key and sequence as value.
     """
     with open(filename, "r") as fasta:
         sequence_dict = {}
@@ -40,8 +50,21 @@ def read_sequences(filename):
 
 
 def search_word_in_proteome(seq_dico, word_list):
-    """
-    Search and counts words in proteome sequences.
+    """Search for the words in the sequences and return a dictionary with the words
+    as key and the number of sequences containing the word as value.
+
+    Parameters
+    ----------
+    seq_dico : dict
+        the sequence dictionary.
+    word_list : list
+        the list of words to search.
+
+    Returns
+    -------
+    dict
+        dictionary with the words as key and the number of sequences
+        containing the word as value.
     """
 
     found_word_dict = {}
@@ -57,9 +80,7 @@ def search_word_in_proteome(seq_dico, word_list):
 
 
 def find_most_frequent_word(freq_dict):
-    """
-    Find and print the most frequent word found in the sequences.
-    """
+    """Find the most frequent word in the dictionary and print it."""
     maxi = max(freq_dict.values())
     for word in freq_dict:
         if freq_dict[word] == maxi:
