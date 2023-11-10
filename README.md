@@ -14,4 +14,9 @@ sequences in FASTA format.
 
 # How to use it
 
+```git clone human-proteome-project```
+
+```cd human-proteome-project```
+
+
 ```python main.py data/english-common-words.txt data/human-proteome.fasta.txt data/NC_001133.gbk```
