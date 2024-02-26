@@ -5,9 +5,14 @@ Main module for the project.
 """
 
 import argparse
-from src.words_in_proteome import read_sequences, search_word_in_proteome, find_most_frequent_word, read_words
-from src.genbank2fasta import read_file, extract_organism
 
+from src.genbank2fasta import read_file, extract_organism
+from src.words_in_proteome import (
+    read_sequences,
+    search_word_in_proteome,
+    find_most_frequent_word,
+    read_words,
+)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

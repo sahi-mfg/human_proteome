@@ -1,4 +1,4 @@
-""""
+"""
 This module contains functions to read words from a file and search for them in a proteome.
 @Author: Sahi Gonsangbeu
 @Date: 2024-02-26
@@ -15,8 +15,8 @@ def read_words(filename: str) -> list:
 
     Returns
     -------
-    list
-        list of words.
+    new lines : list
+        A list of words.
     """
 
     with open(filename) as f:
