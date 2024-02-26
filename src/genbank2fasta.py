@@ -17,7 +17,7 @@ def read_file(filename: str) -> list:
     list
         a list containing the lines of the file.
     """
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf-8") as f:
         return f.readlines()
 
 
