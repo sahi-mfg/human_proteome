@@ -1,3 +1,10 @@
+""""
+This module contains functions to read words from a file and search for them in a proteome.
+@Author: Sahi Gonsangbeu
+@Date: 2024-02-26
+"""
+
+
 def read_words(filename: str) -> list:
     """Read the words from a file and return a list of words.
 
@@ -78,7 +85,7 @@ def search_word_in_proteome(seq_dico: dict, word_list: list) -> dict:
                 seq_count += 1
         if seq_count != 0:
             found_word_dict[word] = seq_count
-            print("{} found {} in sequences".format(word, seq_count))
+            print(f"{word} found {seq_count} in sequences")
     return found_word_dict
 
 
@@ -87,5 +94,5 @@ def find_most_frequent_word(freq_dict: dict) -> None:
     maxi = max(freq_dict.values())
     for word in freq_dict:
         if freq_dict[word] == maxi:
-            print("=> {} found in {} sequences".format(word, maxi))
+            print(f"=> {word} found in {maxi} sequences")
             # print("=> {} found {} times".format(word, maxi))

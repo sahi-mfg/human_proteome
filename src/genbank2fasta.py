@@ -1,3 +1,10 @@
+"""
+This module contains the functions to read the fasta file and extract organism.
+@Author: Sahi Gonsangbeu
+@Date: 2024-02-26
+"""
+
+
 def read_file(filename: str) -> list:
     """Return a list containing the lines of the file.
 

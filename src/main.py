@@ -1,3 +1,9 @@
+""""
+Main module for the project.
+@Author: Sahi Gonsangbeu
+@Date: 2024-02-26
+"""
+
 import argparse
 from src.words_in_proteome import read_sequences, search_word_in_proteome, find_most_frequent_word, read_words
 from src.genbank2fasta import read_file, extract_organism
