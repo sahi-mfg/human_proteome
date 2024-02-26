@@ -19,7 +19,7 @@ def read_words(filename: str) -> list:
         A list of words.
     """
 
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         lines = f.readlines()
         new_lines = []
         for line in lines:
@@ -43,7 +43,7 @@ def read_sequences(filename: str) -> dict:
     dict
         a dictionary with protein id as key and sequence as value.
     """
-    with open(filename, "r") as fasta:
+    with open(filename, "r", encoding="utf-8") as fasta:
         sequence_dict = {}
         for line in fasta:
             if line.startswith(">sp"):
