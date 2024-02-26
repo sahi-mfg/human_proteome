@@ -1,4 +1,4 @@
-def read_words(filename):
+def read_words(filename: str) -> list:
     """Read the words from a file and return a list of words.
 
     Parameters
@@ -22,7 +22,7 @@ def read_words(filename):
         return new_lines
 
 
-def read_sequences(filename):
+def read_sequences(filename: str) -> dict:
     """Read protein sequences from a fasta file and return a dictionary
     with protein id as key and sequence as value.
 
@@ -52,7 +52,7 @@ def read_sequences(filename):
         return sequence_dict
 
 
-def search_word_in_proteome(seq_dico, word_list):
+def search_word_in_proteome(seq_dico: dict, word_list: list) -> dict:
     """Search for the words in the sequences and return a dictionary with the words
     as key and the number of sequences containing the word as value.
 
@@ -82,7 +82,7 @@ def search_word_in_proteome(seq_dico, word_list):
     return found_word_dict
 
 
-def find_most_frequent_word(freq_dict):
+def find_most_frequent_word(freq_dict: dict) -> None:
     """Find the most frequent word in the dictionary and print it."""
     maxi = max(freq_dict.values())
     for word in freq_dict:
