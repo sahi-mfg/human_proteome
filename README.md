@@ -1,6 +1,7 @@
 # human proteome project
 
-The goal of this mini project is to discover if English words can be found in sequences of the human proteome, i.e. in the sequences of all human proteins.
+The goal of this mini project is to discover if English words can be found in sequences of the human proteome, i.e. in
+the sequences of all human proteins.
 human proteins.
 we have at our disposal:
 
@@ -14,8 +15,12 @@ we have at our disposal:
 
 # How to use it
 
-`git clone human-proteome-project`
+- Clone the repository: `git clone git@github.com:momosahi/human_proteome.git`
+  or `git clone https://github.com/momosahi/human_proteome.git`
 
-`cd human-proteome-project`
+- `cd human-proteome-project`
 
-`python src/main.py data/english-common-words.txt data/human-proteome.fasta.txt data/NC_001133.gbk`
+- run it using the following
+  command: `python main.py data/english-common-words.txt data/human-proteome.fasta.txt data/NC_001133.gbk`
+
+- Or use makefile: `make run`
