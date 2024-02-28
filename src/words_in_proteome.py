@@ -77,7 +77,7 @@ def search_word_in_proteome(seq_dico: dict, word_list: list) -> dict:
         containing the word as value.
     """
 
-    found_word_dict = dict()
+    found_word_dict = {}
     for word in word_list:
         seq_count = 0
         for protein_id in seq_dico:
