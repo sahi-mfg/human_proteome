@@ -40,7 +40,7 @@ def read_sequences(filename: str) -> dict:
 
     Returns
     -------
-    dict
+    sequence_dict: dict
         a dictionary with protein id as key and sequence as value.
     """
     with open(filename, "r", encoding="utf-8") as fasta:
@@ -72,12 +72,12 @@ def search_word_in_proteome(seq_dico: dict, word_list: list) -> dict:
 
     Returns
     -------
-    dict
+    found_word_dict: dict
         dictionary with the words as key and the number of sequences
         containing the word as value.
     """
 
-    found_word_dict = {}
+    found_word_dict = dict()
     for word in word_list:
         seq_count = 0
         for protein_id in seq_dico:
@@ -90,7 +90,14 @@ def search_word_in_proteome(seq_dico: dict, word_list: list) -> dict:
 
 
 def find_most_frequent_word(freq_dict: dict) -> None:
-    """Find the most frequent word in the dictionary and print it."""
+    """Find the most frequent word in the dictionary and print it.
+
+    Parameters
+    ----------
+    freq_dict : dict
+        the dictionary with the words as key and the number of sequences
+        containing the word as value.
+    """
     maxi = max(freq_dict.values())
     for word in freq_dict:
         if freq_dict[word] == maxi:
