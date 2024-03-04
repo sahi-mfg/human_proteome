@@ -102,4 +102,3 @@ def find_most_frequent_word(freq_dict: dict) -> None:
     for word in freq_dict:
         if freq_dict[word] == maxi:
             print(f"=> {word} found in {maxi} sequences")
-            # print("=> {} found {} times".format(word, maxi))
